@@ -21,6 +21,9 @@ Lo que nos pide realizar la actividad en el ejercicio son lo siguiente:
  -Completar el triángulo. En nuestro código esta desde la línea 50 a la 61
  #
 # Actividad 2
+- Para la elección de los colores al azar se genera una lista de 5 colores después se hace uso de la función de librerías random.choice y para asegurar que sean diferentes la vibora de la comida se utiliza un condicional while, lineas 8 a 13. Se pone la variable del nuevo color en las líneas 61 y 63.
+
+- Un paso al azar, primero generamos una lista de las posiciones, volvemos a utilizar un random.choice para que la eliga y con condicionales if y else if, damos el paramtro de -10<x<10 y -10<y<10. Línea 45 a 56.
 
 
 #
@@ -28,31 +31,35 @@ Lo que nos pide realizar la actividad en el ejercicio son lo siguiente:
 Lo que nos pide realizar la actividad en el ejercicio son lo siguiente:
 
 
--Los fantasmas sean más listos. Se genero diferencias y se modifico el numero del ciclo de la linea 197
+-Un nuevo color. En nuestro código se agrego el color purpura en la línea 89
 
 
--Cambiar el tablero. Cambiamos la parte de titles y el color. Lineas 17 y 89 respectivamente
+-Dibujar un círculo. En nuestro código se completó el código del círculo desde la línea 24 a la 36.
 
 
--Hacer que los fantasmas vayan mas rápido. Se hizo que el pacman y el fantasma hicieran sus diferencias en 3 opciones para poder atraparlo más rapido
+-Completar el rectángulo.  En nuestro código se completó desde la línea 38 a la 48.
+
+
+ -Completar el triángulo. En nuestro código esta desde la línea 50 a la 61
 
 #
 # Actividad 4
+- Nos pide aumentar la velocidad de las pelotas y el proyectil por lo que se incrementa la velocidad general del programa en la línea 63
 
-
+- Para el juego infinito hacemos que los targets/pelotas se reposicionen con un goto mientras no se encuentren dentro de la ventana con la funcín ya definida de inside que verifica este parámetro, cambios en la línea 59 a 61.
 
 #
 # Actividad 5
 Lo que se nos pide en la actividad es lo siguiente:
 
 
--Contar y desplegar el número de taps. 	Lo que modificamos fue generar un global taps y generar un contador y acumulador
+-Contar y desplegar el número de taps. 	Lo que modificamos fue 
 
 
--Detectar cuando todos los cuadros se han destapado. Hicemos modificaciones de la linea 67-76
+-Detectar cuando todos los cuadros se han destapado
 
 
--Centrar el digito del cuadrado. Utilizamos la siguiente instrucción de cambio en la linea 63
+-Centrar el digito del cuadrado. Utilizamos la siguiente instrucción 
 
 
--Como un condimento de incoación al juego. ¿Podrías utilizas algo diferente a los dígitos para resolver el juego y que al usuario le ayude a tener mejor memoria?. En titles lo quisimos cambiar por signos opuestos y dividirlo entre 2
+-Como un condimento de incoación al juego. ¿Podrías utilizas algo diferente a los dígitos para resolver el juego y que al usuario le ayude a tener mejor memoria?
