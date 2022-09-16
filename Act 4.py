@@ -57,7 +57,8 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            goto(target.x, target.y)
+            dot(20, 'blue')
 
     ontimer(move, 15)
 
