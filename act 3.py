@@ -121,7 +121,70 @@ def move():
                 vector(0, 5),
                 vector(0, -5),
             ]
-            plan = choice(options)
+            #diferencia de pacman y punto en 'x' son mas grande que las de 'y'
+            if abs(pacman.x - point.x) > abs(pacman.y - point.y):
+                #si la 'x' del punto es mas grande que la 'x' del pacman, se mueve hacia -5 en 'x'
+                if pacman.x < point.x:
+                    plan = option2
+                #si la 'x' del punto es mas chico que la 'x' del pacman, se mueve hacia 5 en 'x'
+                elif pacman.x > point.x:
+                    plan = option1
+                
+                course.x = plan.x
+                course.y = plan.y
+                
+                if valid(point + course):
+                    point.move(course)
+                else:
+                    if pacman.y < point.y:
+                        plan = option4
+                    #si la 'y' del punto es mas chico que la 'y' del pacman, se mueve hacia 5 en 'y'
+                    elif pacman.y > point.y:
+                        plan = option3
+
+                    
+            #diferencia de pacman y punto en 'y' son mas grande que las de 'x'
+            elif abs(pacman.x - point.x) < abs(pacman.y - point.y):
+                #si la 'y' del punto es mas grande que la 'y' del pacman, se mueve hacia -5 en 'y'
+                if pacman.y < point.y:
+                    plan = option4
+                #si la 'y' del punto es mas chico que la 'y' del pacman, se mueve hacia 5 en 'y'
+                elif pacman.y > point.y:
+                    plan = option3
+                
+                course.x = plan.x
+                course.y = plan.y
+                
+                if valid(point + course):
+                    point.move(course)
+                else:
+                    #si la 'x' del punto es mas grande que la 'x' del pacman, se mueve hacia -5 en 'x'
+                    if pacman.x < point.x:
+                        plan = option2
+                    #si la 'x' del punto es mas chico que la 'x' del pacman, se mueve hacia 5 en 'x'
+                    elif pacman.x > point.x:
+                        plan = option1
+                    
+
+            
+            #si 'x' en pacman y en el punto son iguales
+            elif pacman.x == point.x:
+                #si la 'y' de punto es mas grande que la 'y' de pacman
+                if pacman.y < point.y:
+                    plan = option4
+                #si la 'y' de pacman es mas grande que la 'y' de el punto
+                elif pacman.y > point.y:
+                    plan = option3
+                    
+            #si 'y' en pacman y en el punto son iguales    
+            elif pacman.y == point.y:
+                #si la 'x' del punto es mas grande que la 'x' de pacman
+                if pacman.x < point.x:
+                    plan = option2
+                #si la 'x' de pacman es mas grande que la 'x' del punto
+                elif pacman.x > point.x:
+                    plan = option1
+            
             course.x = plan.x
             course.y = plan.y
 
