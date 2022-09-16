@@ -194,7 +194,7 @@ def move():
     update()
 
     for point, course in ghosts:
-        if abs(pacman - point) < :
+        if abs(pacman - point) < 5:
             return
 
     ontimer(move, 50)
