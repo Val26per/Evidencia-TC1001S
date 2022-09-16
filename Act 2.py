@@ -11,6 +11,8 @@ cf = random.choice(colors)
 
 while cb == cf:
     cf = random.choice(colors)
+    
+places = ['left', 'right', 'up', 'down']
 
 def change(x, y):
     "Change snake direction."
@@ -39,7 +41,20 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
-
+        
+    pos = random.choice(places)
+    if not dentro(food):
+        food.x = randrange(-15, 15) * 10 
+        food.y = randrange(-15, 15) * 10
+    elif pos == 'left':
+        food.x -=10
+    elif pos == 'right':
+        food.x +=10
+    elif pos == 'up':
+        food.y += 10
+    else:
+        food.y -= 10
+    
     clear()
 
     for body in snake:
