@@ -28,14 +28,13 @@ Lo que nos pide realizar la actividad en el ejercicio son lo siguiente:
 Lo que nos pide realizar la actividad en el ejercicio son lo siguiente:
 
 
--Los fantasmas sean más listos
+-Los fantasmas sean más listos. Se genero diferencias y se modifico el numero del ciclo de la linea 197
 
 
--Cambiar el tablero.
+-Cambiar el tablero. Cambiamos la parte de titles y el color
 
 
--Hacer que los fantasmas vayan mas rápido. 
-
+-Hacer que los fantasmas vayan mas rápido. Se hizo que el pacman y el fantasma hicieran sus diferencias en 3 opciones para poder atraparlo más rapido
 
 #
 # Actividad 4
