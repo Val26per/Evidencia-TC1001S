@@ -28,16 +28,14 @@ Lo que nos pide realizar la actividad en el ejercicio son lo siguiente:
 Lo que nos pide realizar la actividad en el ejercicio son lo siguiente:
 
 
--Un nuevo color. En nuestro código se agrego el color purpura en la línea 89
+-Los fantasmas sean más listos
 
 
--Dibujar un círculo. En nuestro código se completó el código del círculo desde la línea 24 a la 36.
+-Cambiar el tablero.
 
 
--Completar el rectángulo.  En nuestro código se completó desde la línea 38 a la 48.
+-Hacer que los fantasmas vayan mas rápido. 
 
-
- -Completar el triángulo. En nuestro código esta desde la línea 50 a la 61
 
 #
 # Actividad 4
