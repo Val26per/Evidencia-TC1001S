@@ -115,75 +115,29 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
-            option1 = vector(5, 0)
-            option2 = vector(-5, 0)
-            option3 = vector(0, 5)
-            option4 = vector(0, -5)
-            ]
-            #diferencia de pacman y punto en 'x' son mas grande que las de 'y'
-            if abs(pacman.x - point.x) > abs(pacman.y - point.y):
-                #si la 'x' del punto es mas grande que la 'x' del pacman, se mueve hacia -5 en 'x'
-                if pacman.x < point.x:
-                    plan = option2
-                #si la 'x' del punto es mas chico que la 'x' del pacman, se mueve hacia 5 en 'x'
-                elif pacman.x > point.x:
-                    plan = option1
-                
-                course.x = plan.x
-                course.y = plan.y
-                
-                if valid(point + course):
-                    point.move(course)
-                else:
-                    if pacman.y < point.y:
-                        plan = option4
-                    #si la 'y' del punto es mas chico que la 'y' del pacman, se mueve hacia 5 en 'y'
-                    elif pacman.y > point.y:
-                        plan = option3
+            #Saber dónde está el pacman con respecto al fantasma...
+            # point es un vector (x,y) que me dice dónde está el fantasma
+            # pacman.x y pacman.y son los valores del pacman en el mundo...
 
-                    
-            #diferencia de pacman y punto en 'y' son mas grande que las de 'x'
-            elif abs(pacman.x - point.x) < abs(pacman.y - point.y):
-                #si la 'y' del punto es mas grande que la 'y' del pacman, se mueve hacia -5 en 'y'
-                if pacman.y < point.y:
-                    plan = option4
-                #si la 'y' del punto es mas chico que la 'y' del pacman, se mueve hacia 5 en 'y'
-                elif pacman.y > point.y:
-                    plan = option3
-                
-                course.x = plan.x
-                course.y = plan.y
-                
-                if valid(point + course):
-                    point.move(course)
+            if(pacman.x > point.x):
+                #El pacman está a mi derecha
+                if(pacman.y > point.y):
+                    #El pacman está arriba a la derecha
+                    options = [vector(5, 0),vector(0, 5)] #RU
                 else:
-                    #si la 'x' del punto es mas grande que la 'x' del pacman, se mueve hacia -5 en 'x'
-                    if pacman.x < point.x:
-                        plan = option2
-                    #si la 'x' del punto es mas chico que la 'x' del pacman, se mueve hacia 5 en 'x'
-                    elif pacman.x > point.x:
-                        plan = option1
-                    
+                    #El pacman está abajo a la derecha
+                    options = [vector(5, 0),vector(0, -5)] #RD
+            else:
+                #El pacman está a mi izquierda
+                if(pacman.y > point.y):
+                    #El pacman está arriba a mi izquierda
+                    options = [vector(-5, 0),vector(0, 5)] #LU
+                else:
+                    #El pacman está abajo a mi izquierda
+                    options = [vector(-5, 0),vector(0, -5)] #LD
 
-            
-            #si 'x' en pacman y en el punto son iguales
-            elif pacman.x == point.x:
-                #si la 'y' de punto es mas grande que la 'y' de pacman
-                if pacman.y < point.y:
-                    plan = option4
-                #si la 'y' de pacman es mas grande que la 'y' de el punto
-                elif pacman.y > point.y:
-                    plan = option3
-                    
-            #si 'y' en pacman y en el punto son iguales    
-            elif pacman.y == point.y:
-                #si la 'x' del punto es mas grande que la 'x' de pacman
-                if pacman.x < point.x:
-                    plan = option2
-                #si la 'x' de pacman es mas grande que la 'x' del punto
-                elif pacman.x > point.x:
-                    plan = option1
-            
+            plan = choice(options)
+
             course.x = plan.x
             course.y = plan.y
 
@@ -194,16 +148,18 @@ def move():
     update()
 
     for point, course in ghosts:
-        if abs(pacman - point) < 5:
+        if abs(pacman - point) < 20:
             return
 
-    ontimer(move, 50)
+    ontimer(move, 100)
+
 
 def change(x, y):
     "Change pacman aim if valid."
     if valid(pacman + vector(x, y)):
         aim.x = x
         aim.y = y
+
 
 setup(420, 420, 370, 0)
 hideturtle()
