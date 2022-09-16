@@ -64,17 +64,19 @@ def draw():
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
    
-cartas_fal = hide.count(True)
-if cartas_fal ==0;
-    up()
-    goto(-185, 120)
-    color('green')
-    write('Ganaste!!', font=('Arial', 30, 'normal'))
-    up()
-    goto(-185, 120)
-    color('white')
-    write(f'Numero de taps: {taps}',font=('Arial',2','normal'))
-
+    cartas_fal = hide.count(True)
+    if cartas_fal == 0:
+        up()
+        goto(-185, 120)
+        color('green')
+        write('Ganaste!!', font=('Arial', 30, 'normal'))
+        goto(-120, 80)
+        color('white')
+        write(f'Numero de taps: {taps}',font=('Arial',20,'normal'))
+        up()
+        goto(-150, -150)
+        color('white')
+        
     update()
     ontimer(draw, 100)
 
