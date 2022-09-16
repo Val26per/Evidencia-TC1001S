@@ -115,11 +115,10 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
-            options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
+            option1 = vector(5, 0)
+            option2 = vector(-5, 0)
+            option3 = vector(0, 5)
+            option4 = vector(0, -5)
             ]
             #diferencia de pacman y punto en 'x' son mas grande que las de 'y'
             if abs(pacman.x - point.x) > abs(pacman.y - point.y):
@@ -195,10 +194,10 @@ def move():
     update()
 
     for point, course in ghosts:
-        if abs(pacman - point) < 20:
+        if abs(pacman - point) < :
             return
 
-    ontimer(move, 100)
+    ontimer(move, 50)
 
 def change(x, y):
     "Change pacman aim if valid."
