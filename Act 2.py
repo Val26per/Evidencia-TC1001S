@@ -1,3 +1,4 @@
+from turtle import *
 import random
 from random import randrange
 from freegames import square, vector
