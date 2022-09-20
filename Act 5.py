@@ -6,7 +6,7 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
-tabs = 0
+taps = 0
 
 def square(x, y):
     "Draw white square with black outline at (x, y)."
@@ -70,13 +70,14 @@ def draw():
         goto(-185, 120)
         color('green')
         write('Ganaste!!', font=('Arial', 30, 'normal'))
+    #up()
         goto(-120, 80)
         color('white')
         write(f'Numero de taps: {taps}',font=('Arial',20,'normal'))
         up()
         goto(-150, -150)
         color('white')
-        
+    
     update()
     ontimer(draw, 100)
 
