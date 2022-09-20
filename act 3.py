@@ -1,5 +1,6 @@
 from random import choice
 from turtle import *
+
 from freegames import floor, vector
 
 state = {'score': 0}
@@ -8,11 +9,12 @@ writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
 ghosts = [
-    [vector(-180, 160), vector(5, 0)],
-    [vector(-180, -160), vector(0, 5)],
-    [vector(100, 160), vector(0, -5)],
-    [vector(100, -160), vector(-5, 0)],
+    [vector(-180, 160), vector(30, 0)],
+    [vector(-180, -160), vector(0, 30)],
+    [vector(100, 160), vector(0, -30)],
+    [vector(100, -160), vector(-30, 0)],
 ]
+# fmt: off
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
@@ -34,6 +36,9 @@ tiles = [
     0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+]
+# fmt: on
+
 
 def square(x, y):
     "Draw square using path at (x, y)."
@@ -48,12 +53,14 @@ def square(x, y):
 
     path.end_fill()
 
+
 def offset(point):
     "Return offset of point in tiles."
     x = (floor(point.x, 20) + 200) / 20
     y = (180 - floor(point.y, 20)) / 20
     index = int(x + y * 20)
     return index
+
 
 def valid(point):
     "Return True if point is valid in tiles."
@@ -68,6 +75,7 @@ def valid(point):
         return False
 
     return point.x % 20 == 0 or point.y % 20 == 0
+
 
 def world():
     "Draw world using path."
@@ -85,7 +93,8 @@ def world():
             if tile == 1:
                 path.up()
                 path.goto(x + 10, y + 10)
-                path.dot(5, 'pink')
+                path.dot(3, 'pink')
+
 
 def move():
     "Move pacman and all ghosts."
